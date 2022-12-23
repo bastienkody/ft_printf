@@ -6,7 +6,7 @@
 /*   By: bguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 17:09:54 by bguillau          #+#    #+#             */
-/*   Updated: 2022/11/24 18:13:25 by bguillau         ###   ########.fr       */
+/*   Updated: 2022/12/23 13:06:28 by bguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 # define AMPERSAND '%'
 # define STD_OUT 1
 # define PTR_NULL "(nil)"
+# define STR_NULL "(null)"
 
-#include "libft/libft.h"
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
+# include "libft/libft.h"
+# include <stdarg.h>
+# include <unistd.h>
+# include <stdlib.h>
 
 int		ft_printf(const char *str, ...);
 int		print_char(va_list init);
