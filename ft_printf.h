@@ -6,13 +6,12 @@
 /*   By: bguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 17:09:54 by bguillau          #+#    #+#             */
-/*   Updated: 2022/12/23 13:06:28 by bguillau         ###   ########.fr       */
+/*   Updated: 2022/12/23 13:16:25 by bguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINT_H
-# define AMPERSAND '%'
 # define STD_OUT 1
 # define PTR_NULL "(nil)"
 # define STR_NULL "(null)"
