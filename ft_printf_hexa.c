@@ -6,7 +6,7 @@
 /*   By: bguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 11:44:11 by bguillau          #+#    #+#             */
-/*   Updated: 2022/11/25 11:09:28 by bguillau         ###   ########.fr       */
+/*   Updated: 2022/12/23 11:26:04 by bguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static int	putnbr_hexa(unsigned int nbr, int *len, char c)
 {
 	char	*base;
-	
+
 	if (c == 'x')
 		base = "0123456789abcdef";
 	else
@@ -31,7 +31,7 @@ static int	putnbr_hexa(unsigned int nbr, int *len, char c)
 int	ptr_hexa(unsigned long long nbr, int *len, char c)
 {
 	char	*base;
-	
+
 	base = "0123456789abcdef";
 	if (nbr > 15)
 		ptr_hexa(nbr / 16, len, c);

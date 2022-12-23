@@ -1,4 +1,4 @@
-/* **************************unsigned long long************************************************ */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_printf_printer.c                                :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: bguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 11:05:14 by bguillau          #+#    #+#             */
-/*   Updated: 2022/11/25 12:08:14 by bguillau         ###   ########.fr       */
+/*   Updated: 2022/12/23 13:07:10 by bguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	print_char(va_list init)
 
 	i = (int) va_arg(init, int);
 	c = (unsigned char) i;
-	return(write(STD_OUT, &c, 1));
+	return (write(STD_OUT, &c, 1));
 }
 
 int	print_str(va_list init)
@@ -27,8 +27,10 @@ int	print_str(va_list init)
 	char	*str;
 
 	str = (char *) va_arg(init, char *);
+	if (!str)
+		return (write(STD_OUT, STR_NULL, 6));
 	ft_putstr_fd(str, STD_OUT);
-	return (ft_strlen(str));	
+	return (ft_strlen(str));
 }
 
 int	print_ptr(va_list init)
@@ -44,7 +46,7 @@ int	print_ptr(va_list init)
 	num = (unsigned long long) ptr;
 	len = write(STD_OUT, "0x", 2);
 	if (!num)
-		return (len + ((int) write(STD_OUT, "0", 1)));
+		return (len + write(STD_OUT, "0", 1));
 	else
 		return (ptr_hexa(num, &len, 'x'));
 }
@@ -56,8 +58,10 @@ int	print_deci(va_list init)
 
 	n = (int) va_arg(init, int);
 	ft_putnbr_fd(n, STD_OUT);
+	if (n == 0)
+		return (1);
 	if (n < 0)
-		len  = 1;
+		len = 1;
 	else
 		len = 0;
 	while (n)
@@ -66,7 +70,6 @@ int	print_deci(va_list init)
 		n /= 10;
 	}
 	return (len);
-	
 }
 
 int	print_unsigned(va_list init)
@@ -77,6 +80,8 @@ int	print_unsigned(va_list init)
 	n = (unsigned int) va_arg(init, unsigned int);
 	ft_putunbr_fd(n, STD_OUT);
 	len = 0;
+	if (n == 0)
+		return (1);
 	while (n)
 	{
 		len += 1;
