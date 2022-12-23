@@ -6,7 +6,7 @@
 /*   By: bguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 11:44:11 by bguillau          #+#    #+#             */
-/*   Updated: 2022/12/23 11:26:04 by bguillau         ###   ########.fr       */
+/*   Updated: 2022/12/23 14:38:30 by bguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	putnbr_hexa(unsigned int nbr, int *len, char c)
 	return (*len);
 }
 
-int	ptr_hexa(unsigned long long nbr, int *len, char c)
+int	ptr_hexa(uintptr_t nbr, int *len, char c)
 {
 	char	*base;
 

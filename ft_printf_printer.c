@@ -6,7 +6,7 @@
 /*   By: bguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 11:05:14 by bguillau          #+#    #+#             */
-/*   Updated: 2022/12/23 13:07:10 by bguillau         ###   ########.fr       */
+/*   Updated: 2022/12/23 14:38:12 by bguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ int	print_str(va_list init)
 int	print_ptr(va_list init)
 {
 	void				*ptr;
-	unsigned long long	num;
+	uintptr_t			num;
 	int					len;
 
 	len = 0;
 	ptr = (void *) va_arg(init, void *);
 	if (!ptr)
 		return (write(STD_OUT, PTR_NULL, 5));
-	num = (unsigned long long) ptr;
+	num = (uintptr_t) ptr;
 	len = write(STD_OUT, "0x", 2);
 	if (!num)
 		return (len + write(STD_OUT, "0", 1));

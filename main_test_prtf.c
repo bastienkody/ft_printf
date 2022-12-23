@@ -6,7 +6,7 @@
 /*   By: bguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:00:00 by bguillau          #+#    #+#             */
-/*   Updated: 2022/12/23 12:57:04 by bguillau         ###   ########.fr       */
+/*   Updated: 2022/12/23 14:46:26 by bguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,20 @@ int	main(void)
 {
 	int	i;
 	int	j;
-//	char	*str;
+	char	*str;
+	char	*str2;
 
-//	str = malloc(12);
-//	i = ft_printf("salut %i %u %x %X %c %s %s %p %p %%\n", 0, 2147483647, 42, -420, 'c', "salut", str, str, NULL);
-	i = ft_printf("%s\n", NULL);
+	str = malloc(12);
+	str2 = malloc(120);
+	i = ft_printf("salut %i %u %x %X %c %s%s %s %p %p %p %%\n", 0, 2147483647, 42, -420, 'c', "salut", str, NULL, str, NULL, str2);
 	ft_putnbr_fd(i, STD_OUT);
 	printf("\n");
 //	printf("Vrai fct :\n");
-//	j = printf("salut %i %u %x %X %c %s %s %p %p %%\n", 0, 2147483647, 42, -420, 'c', "salut", str, str, NULL);
-	j = printf("%s\n", NULL);
+	j = printf("salut %i %u %x %X %c %s %s%s %p %p %p %%\n", 0, 2147483647, 42, -420, 'c', "salut", str, NULL, str, NULL, str2);
 	ft_putnbr_fd(j, STD_OUT);
 	printf("\n");
+	free(str);
+	free(str2);
 }
 
 // para la compilacion (doesnt work without the -L.)
